@@ -1,0 +1,44 @@
+import { Link } from 'react-router-dom'
+import { ArrowUpRight, CheckCircle2, Clock3, Leaf, MessageCircle, Phone, Sprout, CalendarDays, ShieldCheck, Sparkles, MapPin } from 'lucide-react'
+
+const faqs = [
+  ['What landscaping services do you provide?', 'We support garden maintenance, landscape improvements, lawn care, planting, irrigation, planter beds and outdoor refresh projects. Contact us to discuss your exact requirements.'],
+  ['Can I request a one-time visit or regular maintenance?', 'Yes. Tell us whether you need a one-off garden refresh or a recurring maintenance plan, and we can discuss a suitable scope.'],
+  ['Do you serve villas and residential communities in Dubai?', 'We work with a range of outdoor spaces across Dubai. Share your community or location so we can confirm service availability.'],
+  ['How do I get a quotation?', 'Send us your location, a short description of the work and photos if available. For larger projects, a site visit may help define the scope.'],
+  ['Can you help improve an existing garden?', 'Absolutely. We can discuss practical improvements such as fresh planting, planter-bed updates, lawn care and irrigation support.'],
+  ['What should I prepare before a site visit?', 'A few photos, your location, preferred timing and a list of priorities are a helpful starting point.'],
+]
+const reasons = [
+  ['Practical recommendations', 'Solutions shaped around your space, priorities and maintenance needs.', Sprout],
+  ['Careful finishing', 'Attention to planting, edges, tidy work areas and the details that complete a garden.', Sparkles],
+  ['Clear communication', 'A straightforward discussion of scope, scheduling and next steps.', MessageCircle],
+  ['Dubai-aware care', 'Landscape choices considered for local conditions and outdoor use.', ShieldCheck],
+]
+const ways = [
+  ['1', 'Call our team', 'Talk through your garden, location and timing.', Phone],
+  ['2', 'Message on WhatsApp', 'Share photos and a short description of the work.', MessageCircle],
+  ['3', 'Request a site visit', 'Arrange a visit when the scope needs an in-person look.', MapPin],
+  ['4', 'Plan your service', 'Agree the scope and the next steps before work begins.', CalendarDays],
+]
+const testimonials = [
+  ['“The team understood the garden priorities and helped us plan the work clearly.”', 'Sample testimonial — replace with an approved customer review'],
+  ['“We appreciated the practical suggestions and the attention to the finishing details.”', 'Sample testimonial — replace with an approved customer review'],
+  ['“The process was straightforward, from the first conversation to agreeing the scope.”', 'Sample testimonial — replace with an approved customer review'],
+]
+
+export default function PageEnhancements({ count = 10 }) {
+ const sections = [
+  <section className="redesign-section redesign-why" key="why"><div className="redesign-wrap"><div className="redesign-heading"><span className="redesign-kicker">THE SUNNY STAR DIFFERENCE</span><h2>Why choose <em>Sunny Star?</em></h2><p>Good landscaping starts with understanding how you want to use your outdoor space.</p></div><div className="redesign-grid redesign-grid-4">{reasons.map(([title, text, Icon]) => <article className="redesign-card" key={title}><span className="redesign-icon"><Icon size={23}/></span><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>,
+  <section className="redesign-section redesign-ways" key="ways"><div className="redesign-wrap"><div className="redesign-heading"><span className="redesign-kicker">SIMPLE FROM THE START</span><h2>Ways to get <em>our services</em></h2><p>Choose the contact method that works best for you.</p></div><div className="redesign-grid redesign-grid-4">{ways.map(([num, title, text, Icon]) => <article className="redesign-way" key={title}><div className="redesign-way-top"><span>{num}</span><Icon size={22}/></div><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>,
+  <section className="redesign-section redesign-testimonials" key="testimonials"><div className="redesign-wrap"><div className="redesign-heading"><span className="redesign-kicker">CUSTOMER EXPERIENCE</span><h2>What clients <em>value</em></h2><p>Replace the sample cards below with genuine, approved customer feedback before publishing.</p></div><div className="redesign-grid redesign-grid-3">{testimonials.map(([quote, source]) => <figure className="redesign-quote" key={source}><div className="redesign-stars" aria-label="Sample review">★★★★★</div><blockquote>{quote}</blockquote><figcaption>{source}</figcaption></figure>)}</div></div></section>,
+  <section className="redesign-section redesign-process" key="process"><div className="redesign-wrap redesign-split"><div className="redesign-heading"><span className="redesign-kicker">A CLEAR PROCESS</span><h2>From first chat to <em>finished garden</em></h2><p>We keep the conversation practical so you know what happens next.</p><Link className="redesign-btn" to="/contact/">Start a conversation <ArrowUpRight size={17}/></Link></div><div className="redesign-steps">{[['01','Tell us about your space'],['02','Discuss priorities and scope'],['03','Confirm the plan and timing'],['04','Complete the agreed work']].map(([n,t])=><div className="redesign-step" key={n}><span>{n}</span><strong>{t}</strong><CheckCircle2 size={19}/></div>)}</div></div></section>,
+  <section className="redesign-section redesign-benefits" key="benefits"><div className="redesign-wrap redesign-benefit-panel"><div><span className="redesign-kicker">THOUGHTFUL OUTDOOR CARE</span><h2>Made for the way <em>you live outside</em></h2></div><p>From a neat, low-maintenance garden to a more inviting outdoor setting, we help you focus on improvements that fit your space and goals.</p><Link className="redesign-btn" to="/services/">Explore services <ArrowUpRight size={17}/></Link></div></section>,
+  <section className="redesign-section redesign-areas" key="areas"><div className="redesign-wrap redesign-area-inner"><div><span className="redesign-kicker">SERVING DUBAI</span><h2>Outdoor care for <em>your community</em></h2><p>Tell us your villa, building or community name and we’ll confirm whether we can help with your location and requested service.</p></div><div className="redesign-area-tags"><span>Villa gardens</span><span>Residential communities</span><span>Planter beds</span><span>Shared outdoor spaces</span><span>Garden refreshes</span><span>Irrigation support</span></div></div></section>,
+  <section className="redesign-section redesign-sustain" key="sustain"><div className="redesign-wrap redesign-split"><div className="redesign-photo" role="img" aria-label="Green landscaped garden"/><div className="redesign-heading"><span className="redesign-kicker">CARE THAT LASTS</span><h2>Greener spaces, <em>considered choices</em></h2><p>Healthy planting and sensible watering are important parts of a garden that stays inviting. We’ll discuss practical options for your space, exposure and maintenance routine.</p><ul className="redesign-checks"><li><CheckCircle2 size={18}/> Planting suited to the space</li><li><CheckCircle2 size={18}/> Practical irrigation considerations</li><li><CheckCircle2 size={18}/> Maintenance needs discussed upfront</li></ul></div></div></section>,
+  <section className="redesign-section redesign-faq" key="faq"><div className="redesign-wrap redesign-faq-layout"><div className="redesign-heading"><span className="redesign-kicker">GOOD TO KNOW</span><h2>Frequently asked <em>questions</em></h2><p>Need a more specific answer? Contact our team and tell us what you have in mind.</p><Link className="redesign-text-link" to="/contact/">Ask us a question <ArrowUpRight size={17}/></Link></div><div className="redesign-accordion">{faqs.map(([q,a])=><details key={q}><summary>{q}<span>+</span></summary><p>{a}</p></details>)}</div></div></section>,
+  <section className="redesign-section redesign-cta" key="cta"><div className="redesign-wrap redesign-cta-inner"><div><span className="redesign-kicker">LET’S TALK ABOUT YOUR GARDEN</span><h2>Ready to make your outdoor space <em>feel better?</em></h2><p>Share your ideas with Sunny Star Landscaping LLC.</p></div><div className="redesign-cta-actions"><Link className="redesign-btn redesign-btn-light" to="/contact/">Request a consultation <ArrowUpRight size={17}/></Link><span><Clock3 size={16}/> Clear next steps, no guesswork</span></div></div></section>,
+  <section className="redesign-section redesign-final" key="final"><div className="redesign-wrap"><div className="redesign-final-icon"><Leaf size={28}/></div><span className="redesign-kicker">SUNNY STAR LANDSCAPING LLC</span><h2>A little more green. <em>A lot more enjoyment.</em></h2><p>Let’s talk about the right next step for your landscape.</p><Link className="redesign-btn" to="/contact/">Get in touch <ArrowUpRight size={17}/></Link></div></section>
+ ]
+ return <>{sections.slice(0, count)}</>
+}
